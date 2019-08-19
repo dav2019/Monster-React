@@ -8,7 +8,8 @@ class App extends Component {
     super();
 
     this.state = {
-      monsters: []
+      monsters: [],
+      searchField: ''
     }
   }
   // fetching data from jsonplaceholder 
@@ -21,6 +22,7 @@ class App extends Component {
   render() {
     return (
       <div>
+        <input type='search' placeholder='search monsters' onChange={e => this.setState({ searchField: e.target.value })} />
         <CardList monsters={this.state.monsters}/>  
       </div>
     );
